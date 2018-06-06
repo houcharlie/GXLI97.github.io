@@ -9,12 +9,14 @@ Here is some of the relevant coursework I've completed at Princeton University.
 ### Machine Learning
 
 ORF350: Analysis of Big Data, Fall '17
+
 ELE538B: Large-Scale Optimization for Data Sciences, Spring '18
 
 
 ### Information/Signals
 
 ELE382: Statistical Signal Processing, Fall '17
+
 ELE486: Transmission and Compression of Information, Spring '18
 
 ### Mathematics
