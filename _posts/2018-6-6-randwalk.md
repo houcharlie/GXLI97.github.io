@@ -33,7 +33,7 @@ Here are the details of the model:
 * Each word has a latent vector $$v_w\in\mathbb{R}^d$$ which we are trying to recover.
 	* These word vectors are assumed to be distributed uniformly in space. 
 	* They are generated as $$v = s * \widehat{v}$$. $$s\in\mathbb{R}$$ is scalar r.v. with $$\mathbb{E}(s) = \tau = \Theta(1)$$ and $$s \le \kappa$$ for some constants $$\tau$$ and $$\kappa$$. $$\widehat{v} \sim N(0, I_d)$$.
-* There is also a time varying *discourse vector* $$c_t\in\mathbb{R}^d$$ which represents what is being discussed. It is time varying because at each time, $$c_{t+1} = c_t + \delta_t$$ for some small random $$\delta_t$$. This has the interpretation that our "conversation topic" is slowly changing in time. $$||\delta_t||_2$$ is upperbounded by some $$\frac{\epsilon_2}{\sqrt{d}}$$.
+* There is also a time varying *discourse vector* $$c_t\in\mathbb{R}^d$$ which represents what is being discussed. It is time varying because at each time, $$c_{t+1} = c_t + \delta_t$$ for some small random $$\delta_t$$. This has the interpretation that our "conversation topic" is slowly changing in time. $$\delta_t$$ is upperbounded in L2 norm by some $$\frac{\epsilon_2}{\sqrt{d}}$$.
 * Then at each time t, a word is generated as follows (log-linear word production model):
 
 $$ P(w|c_t) \propto \exp(\left<v_w, c\right>).$$
