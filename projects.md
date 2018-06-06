@@ -5,3 +5,9 @@ permalink: /projects/
 ---
 
 Here are some of the projects I've been involved in.
+
+### Political Journalists Network
+
+### Police App
+
+### Earthquake Prediction with Neural Nets
