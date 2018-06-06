@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Notes on RAND-WALK: A Latent Variable Model Approach to Word Embeddings
+title: Notes on RAND-WALK - A Latent Variable Model Approach to Word Embeddings
 ---
 
 Here are some notes for a paper I read recently, called [RAND-WALK: A Latent Variable Model Approach to Word Embeddings][1]. I've been reading some material on word embeddings recently, and this paper was especially interesting because it proposes a simple, intuitive generative model that explains why low-dimensional word embeddings "work" - i.e. give us the **King - Man + Woman = Queen** phenomenon that is always the first thing someone learns when they are introduced to word embeddings. The theory it proposes is also used to justify the popular models that are used in practice: the [pointwise mutual information][2], [word2vec][3], and [GloVe][4].
