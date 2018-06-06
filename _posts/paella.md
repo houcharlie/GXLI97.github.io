@@ -6,10 +6,10 @@ title: Paella
 The past few weeks, I've been cooking paella at home and trying to perfect my technique!
 
 ## Ingredients
-I bought all of my ingredients at WholeFoods. I was trying to be as authentic as possible, but unfortunately WholeFoods was lacking in some ingredients and I had to make substitutions/deletions. For example, I replaced Spanish Bomba rice with Arborio, and could not find langoustines. But I think I got most of the rest of the ingredients!
+I bought all of my ingredients at Whole Foods. I was trying to be as authentic as possible, but unfortunately Whole Foods was lacking in some ingredients and I had to make substitutions/deletions. For example, I replaced Spanish Bomba rice with Arborio, and could not find langoustines. But I think I got most of the rest of the ingredients!
 
 ## Attempt 1
-I used a 10-inch cast iron skillet and tried to follow [this recipe][1] as closely as possible. I made the decision to half the size. Here is my finished product:
+I used a 10-inch cast iron skillet and tried to follow [this recipe][1] as closely as possible. I made the decision to halve the size. Here is my finished product:
 
 <img style="text-align:center;" src="{{site.url}}/images/paella1.jpg'" width="200" alt="firstattempt">
 
