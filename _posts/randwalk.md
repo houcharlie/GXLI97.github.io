@@ -136,9 +136,11 @@ Just to summarize this section, the paper considers the task of solving analogie
 * GloVe starts with the *assumption* of linear structure and tries to build an objective from it, which is different from the approach of this paper where they start with a generative model and show that such a linear structure exists.
 * Levy and Goldberg show that SGNS vectors satisfy this linear relationship, but their argument only holds for high-dimensional embeddings.
 
-This paper shows that the generative model that was introduced has this linear structure, and the low-dimensionality of word vectors plays an important role. For every pair of words $$a, b$$ that have a relation R, $$v_a - v_b = \mu_r + \text{noise}$$.
+This paper shows that the generative model that was introduced has this linear structure, and the low-dimensionality of word vectors plays an important role. For every pair of words $$a, b$$ that have a relation R, $$v_a - v_b = \mu_r + \text{noise}$$. The dimension reduction can be viewed as a linear regression that when solved reduces the noise.
 
 ## Concluding Thoughts
+
+This was an interesting paper to read, and fits nicely with other methods. I'm planning on running some of their sample code to reproduce the results.
 
 [1]: https://arxiv.org/abs/1502.03520
 [2]: https://dl.acm.org/citation.cfm?id=89095
