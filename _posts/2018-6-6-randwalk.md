@@ -68,7 +68,7 @@ The last equation corresponds to our intuition that the PMI corresponds to an in
 
 ## A New Training Objective
 
-###Squared Norm
+### Squared Norm
 
 Proving the previous properties requires some mathematics which I currently don't 100% understand, but once we have it, a training objective can be derived with simple algebra.
 
