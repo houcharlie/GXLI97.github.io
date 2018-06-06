@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Home
+permalink:
 ---
 
 <img style="float:right;" src="{{site.url}}/images/picme.jpg" width="150" alt="gene">
