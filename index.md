@@ -3,7 +3,7 @@ layout: page
 title: Home
 ---
 
-<img style="float:right;" src="{{site.url}}/images/picme.jpg" width="150" alt="gene">
+<img style="float:right;" src="{{site.url}}/images/picme.jpg" width="150" alt="gene" hspace="20">
 
 Hello! My name is Gene Li, and I am a senior in the Electrical Engineering Department at Princeton University. This is a personal website for me to keep track of things I've done and write about things I'm interested in: coffee, math, cooking, etc.
 
