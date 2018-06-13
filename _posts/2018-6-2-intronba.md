@@ -1,6 +1,7 @@
 ---
 layout: post
 title: An Introduction to NBA Analytics
+permalink: /blog/:title
 ---
 
 On this site, I previously had an NBA analytics tutorial. I have since converted my GitHub page into a blog :) 
