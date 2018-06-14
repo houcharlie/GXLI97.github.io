@@ -10,7 +10,7 @@ Here is some of the relevant coursework I've completed at Princeton University.
 
 ORF350: Analysis of Big Data, Fall '17
 
-ELE538B: Large-Scale Optimization for Data Sciences, Spring '18 (Final project can be found here)
+ELE538B: Large-Scale Optimization for Data Sciences, Spring '18 (Final project [writeup][1], [presentation][2])
 
 
 ### Information/Signals
@@ -30,3 +30,6 @@ ELE302: Building Real Systems, Spring '18
 ### Miscellaneous
 
 ELE396: Introduction to Quantum Computing, Fall '17
+
+[1]: {{site.url}}/pdfs/gxli_literature_review.pdf
+[2]: {{site.url}}/pdfs/gxli_literature_review_presentation.pdf
