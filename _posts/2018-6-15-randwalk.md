@@ -89,13 +89,59 @@ So this validates the use of PMI - indeed, the value of the PMI matrix encodes t
 
 They have some nice expressions for co-occurence probabilities, and now they go a step further and derive a training objective for recovering the vectors by standard optimization techniques such as stochastic gradient descent (SGD).
 
-I will just state the optimization problem, deferring proof to the original paper (all it uses is some simple algebraic manipulations):
+
+### Squared Norm
+We proceed by maximum likelihood estimation on the observed coocurence matrix $$X_{w,w'}$$:
 
 $$
-\underset{\{v_w\}, C}{\text{minimize}}
-\sum_{w,w'} X_{w,w'}\left(\log X_{w,w'} - \lVert v_w+v_w'\rVert_2^2 - C\right)^2
+\begin{align}
+l &= \log \left(\prod_{(w,w')} p(w,w')^{X_{w,w'}} \right) \\
+&= \sum_{w,w'} X_{w,w'} \log p(w,w') \\
+&= \sum_{w,w'} X_{w,w'} (\log{\frac{\widetilde{L}p(w,w')}{X_{w,w'}}} + \log \frac{X_{w,w'}}{\widetilde{L}})
+\end{align}$$
+
+here $$\widetilde{L} := \sum_{w,w'}X_{w,w'}$$ is sum of all the cooccurences. Then let $$\Delta_{w,w'} = \log{\frac{\widetilde{L}p(w,w')}{X_{w,w'}}}$$ (log of the ratio between expected count and observed count).
+
+$$
+\begin{align}
+&= c+\sum_{w,w'} X_{w,w'} \Delta_{w,w'}
+\end{align}$$
+
+For some constant c that we don't care about because it doesn't depend on our word vectors ($$\Delta$$ does).
+
+Instead of maximizing this directly, instead we will rewrite the expression $$\sum_{w,w'} X_{w,w'} \Delta_{w,w'}$$. To begin, let's look at $$\widetilde{L}$$:
+
+$$
+\begin{align}
+\widetilde{L} &= \sum_{w,w'}\widetilde{L} p(w,w') \\
+&= \sum_{w,w'} \exp(\log \widetilde{L} p(w,w')) \\
+&= \sum_{w,w'} \exp(\Delta_{w,w'} + \log(X_{w,w'})) \\
+&= \sum_{w,w'} X_{w,w'} \exp(\Delta_{w,w'}) \\
+&= \sum_{w,w'} X_{w,w'} (1 + \Delta_{w,w'} + \Delta^2_{w,w'}/2 + O(|\Delta_{w,w'}|^3))
+\end{align}$$
+
+The paper makes the argument that the last term in the Taylor series is negligible, so we have:
+
+$$
+\begin{align}
+\widetilde{L} &\approx \sum_{w,w'} X_{w,w'} (1 + \Delta_{w,w'} + \Delta^2_{w,w'}/2) \\
+&=  \widetilde{L} + \sum_{w,w'} X_{w,w'} (\Delta_{w,w'} + \Delta^2_{w,w'}/2)
+\end{align}
 $$
 
+So:
+
+$$c-l \approx \sum_{w,w'} X_{w,w'} \Delta^2_{w,w'}$$
+
+Maximizing $$l$$ corresponds to:
+
+$$\begin{align}
+\sum_{w,w'} X_{w,w'} \Delta^2_{w,w'} = \boxed{\underset{\{v_w\}, C}{\text{minimize}}
+\sum_{w,w'} X_{w,w'}\left(\log X_{w,w'} - \lVert v_w+v_w'\rVert_2^2 - C\right)^2}
+\end{align}$$
+
+
+### Similarity to GloVe
 This is very similar to GloVe! Recall that GloVe's objective function is:
 
 $$
@@ -105,6 +151,8 @@ $$
 
 where $$f(x) = \text{min} \{x^{3/4}, 100 \} $$. Namely, substitute $$s_w = \lVert v_w \rVert _2$$. In the GloVe, they derive this expression from the assumption of linear structure and do a lot of trial and error to get this expression (you might have noticed that the reweighting function $$f$$ is a bit strange). Here, the expression naturally falls out of the generative model.
 
+
+### Similarity to word2vec CBOW
 Similarly, we can connect the derived objective to word2vec continuous bag of words (CBOW) model. Recall that the CBOW model gives the probability of a word, given past words as:
 
 $$p(w_{k+1} | \{w_i\}_{i=1}^k) \propto \exp \left(\left< v_{w_{k+1}}, \frac{1}{k}\sum_{i=1}^k v_{w_i}\right> \right)$$
